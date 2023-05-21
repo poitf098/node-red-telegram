@@ -1,0 +1,2908 @@
+[
+    {
+        "id": "a3d62bcfe5da9cc8",
+        "type": "tab",
+        "label": "Flow 2",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "c9951fb2f5841b8e",
+        "type": "mqtt in",
+        "z": "a3d62bcfe5da9cc8",
+        "name": "",
+        "topic": "data1",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "96777da94f9a576c",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 190,
+        "y": 120,
+        "wires": [
+            [
+                "efb3bde6a5f988b5"
+            ]
+        ]
+    },
+    {
+        "id": "30272224a898b24f",
+        "type": "mqtt in",
+        "z": "a3d62bcfe5da9cc8",
+        "name": "",
+        "topic": "data2",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "96777da94f9a576c",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 190,
+        "y": 160,
+        "wires": [
+            [
+                "36779363470b337a"
+            ]
+        ]
+    },
+    {
+        "id": "4faec8f353ed4a35",
+        "type": "mqtt in",
+        "z": "a3d62bcfe5da9cc8",
+        "name": "",
+        "topic": "data3",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "96777da94f9a576c",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 190,
+        "y": 200,
+        "wires": [
+            [
+                "88ae757b855026dc"
+            ]
+        ]
+    },
+    {
+        "id": "a7d83446baf60497",
+        "type": "mqtt in",
+        "z": "a3d62bcfe5da9cc8",
+        "name": "",
+        "topic": "data4",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "96777da94f9a576c",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 190,
+        "y": 240,
+        "wires": [
+            [
+                "df108e239d223ecf"
+            ]
+        ]
+    },
+    {
+        "id": "9d50e62acd016e07",
+        "type": "change",
+        "z": "a3d62bcfe5da9cc8",
+        "name": "rubah string ke angka",
+        "rules": [
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": "",
+                "fromt": "str",
+                "to": "",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 440,
+        "y": 80,
+        "wires": [
+            [
+                "7d97dd400145bc4d",
+                "aa57a40268e0911f",
+                "b4604bb96d709951"
+            ]
+        ]
+    },
+    {
+        "id": "f0b890b0196ee259",
+        "type": "mqtt in",
+        "z": "a3d62bcfe5da9cc8",
+        "name": "",
+        "topic": "data5",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "96777da94f9a576c",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 190,
+        "y": 280,
+        "wires": [
+            [
+                "7b8e8140f9fc871f"
+            ]
+        ]
+    },
+    {
+        "id": "592578438fc6c662",
+        "type": "mqtt in",
+        "z": "a3d62bcfe5da9cc8",
+        "name": "",
+        "topic": "data",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "96777da94f9a576c",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 190,
+        "y": 80,
+        "wires": [
+            [
+                "9d50e62acd016e07"
+            ]
+        ]
+    },
+    {
+        "id": "7d97dd400145bc4d",
+        "type": "influxdb out",
+        "z": "a3d62bcfe5da9cc8",
+        "influxdb": "4a74512b06580507",
+        "name": "InfluxDB Bucket",
+        "measurement": "kelembapan",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "database",
+        "precisionV18FluxV20": "ms",
+        "retentionPolicyV18Flux": "",
+        "org": "adasdk",
+        "bucket": "datalogger_kelembapan&gas",
+        "x": 860,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "aa57a40268e0911f",
+        "type": "debug",
+        "z": "a3d62bcfe5da9cc8",
+        "name": "debug 1",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 860,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "36779363470b337a",
+        "type": "change",
+        "z": "a3d62bcfe5da9cc8",
+        "name": "rubah string ke angka",
+        "rules": [
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": "",
+                "fromt": "str",
+                "to": "",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 440,
+        "y": 160,
+        "wires": [
+            [
+                "aa57a40268e0911f",
+                "defe346b3a6824f7",
+                "82623ad82d9dad64"
+            ]
+        ]
+    },
+    {
+        "id": "efb3bde6a5f988b5",
+        "type": "change",
+        "z": "a3d62bcfe5da9cc8",
+        "name": "rubah string ke angka",
+        "rules": [
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": "",
+                "fromt": "str",
+                "to": "",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 440,
+        "y": 120,
+        "wires": [
+            [
+                "aa57a40268e0911f",
+                "6d588107dd896823",
+                "9338ad24860e29db"
+            ]
+        ]
+    },
+    {
+        "id": "88ae757b855026dc",
+        "type": "change",
+        "z": "a3d62bcfe5da9cc8",
+        "name": "rubah string ke angka",
+        "rules": [
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": "",
+                "fromt": "str",
+                "to": "",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 440,
+        "y": 200,
+        "wires": [
+            [
+                "aa57a40268e0911f",
+                "a044f9c8ed814f93",
+                "45f37d17c7e63ea2"
+            ]
+        ]
+    },
+    {
+        "id": "df108e239d223ecf",
+        "type": "change",
+        "z": "a3d62bcfe5da9cc8",
+        "name": "rubah string ke angka",
+        "rules": [
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": "",
+                "fromt": "str",
+                "to": "",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 440,
+        "y": 240,
+        "wires": [
+            [
+                "aa57a40268e0911f",
+                "e156bdcdb8b9d8e8",
+                "90ce3fe4695d43b1"
+            ]
+        ]
+    },
+    {
+        "id": "7b8e8140f9fc871f",
+        "type": "change",
+        "z": "a3d62bcfe5da9cc8",
+        "name": "rubah string ke angka",
+        "rules": [
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": "",
+                "fromt": "str",
+                "to": "",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 440,
+        "y": 280,
+        "wires": [
+            [
+                "062ed60e14debbda",
+                "aa57a40268e0911f",
+                "7bdd3ada6c45e4df"
+            ]
+        ]
+    },
+    {
+        "id": "defe346b3a6824f7",
+        "type": "influxdb out",
+        "z": "a3d62bcfe5da9cc8",
+        "influxdb": "4a74512b06580507",
+        "name": "InfluxDB Bucket",
+        "measurement": "suhu(fahrenheit)",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "database",
+        "precisionV18FluxV20": "ms",
+        "retentionPolicyV18Flux": "",
+        "org": "adasdk",
+        "bucket": "datalogger_kelembapan&gas",
+        "x": 860,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "a044f9c8ed814f93",
+        "type": "influxdb out",
+        "z": "a3d62bcfe5da9cc8",
+        "influxdb": "4a74512b06580507",
+        "name": "InfluxDB Bucket",
+        "measurement": "gas lpg",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "database",
+        "precisionV18FluxV20": "ms",
+        "retentionPolicyV18Flux": "",
+        "org": "adasdk",
+        "bucket": "datalogger_kelembapan&gas",
+        "x": 860,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "e156bdcdb8b9d8e8",
+        "type": "influxdb out",
+        "z": "a3d62bcfe5da9cc8",
+        "influxdb": "4a74512b06580507",
+        "name": "InfluxDB Bucket",
+        "measurement": "gas co",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "database",
+        "precisionV18FluxV20": "ms",
+        "retentionPolicyV18Flux": "",
+        "org": "adasdk",
+        "bucket": "datalogger_kelembapan&gas",
+        "x": 860,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "6d588107dd896823",
+        "type": "influxdb out",
+        "z": "a3d62bcfe5da9cc8",
+        "influxdb": "4a74512b06580507",
+        "name": "InfluxDB Bucket",
+        "measurement": "suhu(celcius)",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "database",
+        "precisionV18FluxV20": "ms",
+        "retentionPolicyV18Flux": "",
+        "org": "adasdk",
+        "bucket": "datalogger_kelembapan&gas",
+        "x": 860,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "062ed60e14debbda",
+        "type": "influxdb out",
+        "z": "a3d62bcfe5da9cc8",
+        "influxdb": "4a74512b06580507",
+        "name": "InfluxDB Bucket",
+        "measurement": "smoke",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "database",
+        "precisionV18FluxV20": "ms",
+        "retentionPolicyV18Flux": "",
+        "org": "adasdk",
+        "bucket": "datalogger_kelembapan&gas",
+        "x": 860,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "b4604bb96d709951",
+        "type": "function",
+        "z": "a3d62bcfe5da9cc8",
+        "name": "kelembapan",
+        "func": "if(msg.payload >= 90){\n    node.status({fill:\"red\",shape:\"ring\",text:\"tingkat kelembapan tinggi\"})\n    node.warn(\"terlalu lembab\");\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1090,
+        "y": 40,
+        "wires": [
+            [
+                "73bd6bbe2ec3fa9f"
+            ]
+        ]
+    },
+    {
+        "id": "9338ad24860e29db",
+        "type": "function",
+        "z": "a3d62bcfe5da9cc8",
+        "name": "suhu celcius",
+        "func": "if (msg.payload >= 35) {\n    node.status({ fill: \"red\", shape: \"ring\", text: \"suhu terlalu panas\" })\n    node.warn(\"suhu terlalu panas\")\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1090,
+        "y": 140,
+        "wires": [
+            [
+                "3085a3312872af96"
+            ]
+        ]
+    },
+    {
+        "id": "82623ad82d9dad64",
+        "type": "function",
+        "z": "a3d62bcfe5da9cc8",
+        "name": "suhu fahrenheit",
+        "func": "if (msg.payload >= 88) {\n    node.status({ fill: \"red\", shape: \"ring\", text: \"suhu terlalu panas\" })\n    node.warn(\"suhu terlalu panas\")\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1080,
+        "y": 240,
+        "wires": [
+            [
+                "e586ab8ee6f7c997"
+            ]
+        ]
+    },
+    {
+        "id": "45f37d17c7e63ea2",
+        "type": "function",
+        "z": "a3d62bcfe5da9cc8",
+        "name": "gas",
+        "func": "if (msg.payload >= 0.8) {\n    node.status({ fill: \"red\", shape: \"ring\", text: \"tingkat gas tinggi\" })\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1090,
+        "y": 340,
+        "wires": [
+            [
+                "86d10695a5924c60"
+            ]
+        ]
+    },
+    {
+        "id": "90ce3fe4695d43b1",
+        "type": "function",
+        "z": "a3d62bcfe5da9cc8",
+        "name": "co",
+        "func": "if (msg.payload >0.8) {\n    node.status({ fill: \"red\", shape: \"ring\", text: \"tingkat co tinggi\" })\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1090,
+        "y": 440,
+        "wires": [
+            [
+                "6cdae977f67dd6db"
+            ]
+        ]
+    },
+    {
+        "id": "7bdd3ada6c45e4df",
+        "type": "function",
+        "z": "a3d62bcfe5da9cc8",
+        "name": "smoke",
+        "func": "if (msg.payload > 0.8) {\n    node.status({ fill: \"red\", shape: \"ring\", text: \"tingkat asap tinggi\" })\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1090,
+        "y": 540,
+        "wires": [
+            [
+                "599b93b2c969a323"
+            ]
+        ]
+    },
+    {
+        "id": "73bd6bbe2ec3fa9f",
+        "type": "while-loop",
+        "z": "a3d62bcfe5da9cc8",
+        "name": "loop 1",
+        "condi": "msg.payload > 90",
+        "limit": true,
+        "limitTime": "10",
+        "time": "wl73bd6bbe2ec3fa9f",
+        "timeType": "msg",
+        "x": 1090,
+        "y": 80,
+        "wires": [
+            [],
+            [
+                "b4604bb96d709951",
+                "2ddb4f470c3ef6c9",
+                "986d4f3704457ca8"
+            ]
+        ]
+    },
+    {
+        "id": "3085a3312872af96",
+        "type": "while-loop",
+        "z": "a3d62bcfe5da9cc8",
+        "name": "loop 2",
+        "condi": "msg.payload >= 35",
+        "limit": true,
+        "limitTime": "10",
+        "time": "wl73bd6bbe2ec3fa9f",
+        "timeType": "msg",
+        "x": 1090,
+        "y": 180,
+        "wires": [
+            [],
+            [
+                "9338ad24860e29db",
+                "2ddb4f470c3ef6c9",
+                "692fb273aacde173"
+            ]
+        ]
+    },
+    {
+        "id": "e586ab8ee6f7c997",
+        "type": "while-loop",
+        "z": "a3d62bcfe5da9cc8",
+        "name": "loop 3",
+        "condi": "msg.payload >= 90",
+        "limit": true,
+        "limitTime": "10",
+        "time": "wl73bd6bbe2ec3fa9f",
+        "timeType": "msg",
+        "x": 1090,
+        "y": 280,
+        "wires": [
+            [],
+            [
+                "82623ad82d9dad64",
+                "2ddb4f470c3ef6c9",
+                "a3ebb747cf86996b"
+            ]
+        ]
+    },
+    {
+        "id": "86d10695a5924c60",
+        "type": "while-loop",
+        "z": "a3d62bcfe5da9cc8",
+        "name": "loop 4",
+        "condi": "msg.payload >= 1",
+        "limit": true,
+        "limitTime": "10",
+        "time": "wl73bd6bbe2ec3fa9f",
+        "timeType": "msg",
+        "x": 1090,
+        "y": 380,
+        "wires": [
+            [],
+            [
+                "45f37d17c7e63ea2",
+                "2ddb4f470c3ef6c9",
+                "f06d535696624710"
+            ]
+        ]
+    },
+    {
+        "id": "6cdae977f67dd6db",
+        "type": "while-loop",
+        "z": "a3d62bcfe5da9cc8",
+        "name": "loop 5",
+        "condi": "msg.payload > 5",
+        "limit": true,
+        "limitTime": "10",
+        "time": "wl73bd6bbe2ec3fa9f",
+        "timeType": "msg",
+        "x": 1090,
+        "y": 480,
+        "wires": [
+            [],
+            [
+                "90ce3fe4695d43b1",
+                "2ddb4f470c3ef6c9",
+                "675b40b8ae11ab66"
+            ]
+        ]
+    },
+    {
+        "id": "599b93b2c969a323",
+        "type": "while-loop",
+        "z": "a3d62bcfe5da9cc8",
+        "name": "loop 6",
+        "condi": "msg.payload > 5",
+        "limit": true,
+        "limitTime": "10",
+        "time": "wl73bd6bbe2ec3fa9f",
+        "timeType": "msg",
+        "x": 1090,
+        "y": 580,
+        "wires": [
+            [],
+            [
+                "7bdd3ada6c45e4df",
+                "2ddb4f470c3ef6c9",
+                "19597d6e788c7ce9"
+            ]
+        ]
+    },
+    {
+        "id": "e6a9186cfaaebf9f",
+        "type": "mqtt out",
+        "z": "a3d62bcfe5da9cc8",
+        "name": "",
+        "topic": "command1",
+        "qos": "0",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "96777da94f9a576c",
+        "x": 1810,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "2ddb4f470c3ef6c9",
+        "type": "trigger",
+        "z": "a3d62bcfe5da9cc8",
+        "name": "",
+        "op1": "2",
+        "op2": "1",
+        "op1type": "num",
+        "op2type": "num",
+        "duration": "250",
+        "extend": false,
+        "overrideDelay": false,
+        "units": "ms",
+        "reset": "",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 2,
+        "x": 1560,
+        "y": 260,
+        "wires": [
+            [
+                "e6a9186cfaaebf9f"
+            ],
+            [
+                "e6a9186cfaaebf9f"
+            ]
+        ]
+    },
+    {
+        "id": "986d4f3704457ca8",
+        "type": "trigger",
+        "z": "a3d62bcfe5da9cc8",
+        "name": "",
+        "op1": "",
+        "op2": "{     \"chatId\" : \"2115515786\",     \"type\"   : \"message\",     \"content\": \"peringatan bahaya kelembapan terlalu tinggi\" }",
+        "op1type": "nul",
+        "op2type": "json",
+        "duration": "2",
+        "extend": false,
+        "overrideDelay": false,
+        "units": "s",
+        "reset": "",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 1540,
+        "y": 220,
+        "wires": [
+            [
+                "ee71acd3ec1438a4"
+            ]
+        ]
+    },
+    {
+        "id": "692fb273aacde173",
+        "type": "trigger",
+        "z": "a3d62bcfe5da9cc8",
+        "name": "",
+        "op1": "",
+        "op2": "{     \"chatId\" : \"2115515786\",     \"type\"   : \"message\",     \"content\": \"peringatan bahaya suhu terlalu tinggi\" }",
+        "op1type": "nul",
+        "op2type": "json",
+        "duration": "2",
+        "extend": false,
+        "overrideDelay": false,
+        "units": "s",
+        "reset": "",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 1540,
+        "y": 300,
+        "wires": [
+            [
+                "ee71acd3ec1438a4"
+            ]
+        ]
+    },
+    {
+        "id": "a3ebb747cf86996b",
+        "type": "trigger",
+        "z": "a3d62bcfe5da9cc8",
+        "name": "",
+        "op1": "",
+        "op2": "{     \"chatId\" : \"2115515786\",     \"type\"   : \"message\",     \"content\": \"peringatan bahaya suhu terlalu tinggi\" }",
+        "op1type": "nul",
+        "op2type": "json",
+        "duration": "2",
+        "extend": false,
+        "overrideDelay": false,
+        "units": "s",
+        "reset": "",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 1540,
+        "y": 340,
+        "wires": [
+            [
+                "ee71acd3ec1438a4"
+            ]
+        ]
+    },
+    {
+        "id": "f06d535696624710",
+        "type": "trigger",
+        "z": "a3d62bcfe5da9cc8",
+        "name": "",
+        "op1": "",
+        "op2": "{     \"chatId\" : \"2115515786\",     \"type\"   : \"message\",     \"content\": \"peringatan bahaya gas  lpg terlalu tinggi\" }",
+        "op1type": "nul",
+        "op2type": "json",
+        "duration": "2",
+        "extend": false,
+        "overrideDelay": false,
+        "units": "s",
+        "reset": "",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 1540,
+        "y": 380,
+        "wires": [
+            [
+                "ee71acd3ec1438a4"
+            ]
+        ]
+    },
+    {
+        "id": "675b40b8ae11ab66",
+        "type": "trigger",
+        "z": "a3d62bcfe5da9cc8",
+        "name": "",
+        "op1": "",
+        "op2": "{     \"chatId\" : \"2115515786\",     \"type\"   : \"message\",     \"content\": \"peringatan bahaya gas co terlalu tinggi\" }",
+        "op1type": "nul",
+        "op2type": "json",
+        "duration": "2",
+        "extend": false,
+        "overrideDelay": false,
+        "units": "s",
+        "reset": "",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 1540,
+        "y": 420,
+        "wires": [
+            [
+                "ee71acd3ec1438a4"
+            ]
+        ]
+    },
+    {
+        "id": "19597d6e788c7ce9",
+        "type": "trigger",
+        "z": "a3d62bcfe5da9cc8",
+        "name": "",
+        "op1": "",
+        "op2": "{     \"chatId\" : \"2115515786\",     \"type\"   : \"message\",     \"content\": \"peringatan bahaya kadar asap terlalu tinggi\" }",
+        "op1type": "nul",
+        "op2type": "json",
+        "duration": "2",
+        "extend": false,
+        "overrideDelay": false,
+        "units": "s",
+        "reset": "",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 1540,
+        "y": 460,
+        "wires": [
+            [
+                "ee71acd3ec1438a4"
+            ]
+        ]
+    },
+    {
+        "id": "ee71acd3ec1438a4",
+        "type": "telegram sender",
+        "z": "a3d62bcfe5da9cc8",
+        "name": "monitoring_mqtt_bot",
+        "bot": "003fadf1eb9069c2",
+        "haserroroutput": true,
+        "outputs": 2,
+        "x": 1820,
+        "y": 380,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "15b767a30b790cf2",
+        "type": "telegram command",
+        "z": "a3d62bcfe5da9cc8",
+        "name": "",
+        "command": "/data",
+        "description": "",
+        "registercommand": false,
+        "language": "",
+        "scope": "default",
+        "bot": "003fadf1eb9069c2",
+        "strict": false,
+        "hasresponse": true,
+        "useregex": false,
+        "removeregexcommand": true,
+        "outputs": 2,
+        "x": 210,
+        "y": 360,
+        "wires": [
+            [
+                "c0b1ada432640190"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "c0b1ada432640190",
+        "type": "function",
+        "z": "a3d62bcfe5da9cc8",
+        "name": "pilih data",
+        "func": "var opts = {\n    reply_markup: JSON.stringify({\n        \"inline_keyboard\": [[\n            {\n                \"text\": \"gas co\",\n                \"callback_data\": \"1\"\n            },\n            {\n                \"text\": \"gas lpg\",\n                \"callback_data\": \"2\"\n            },\n            {\n                \"text\": \"humidity\",\n                \"callback_data\": \"3\"\n            },\n            {\n                \"text\": \"smoke\",\n                \"callback_data\": \"4\"\n            },\n            {\n                \"text\": \"suhu celcius\",\n                \"callback_data\": \"5\"\n            },\n            {\n                \"text\": \"suhu fahrenheit\",\n                \"callback_data\": \"6\"\n            }]\n        ]\n    })\n};\n\nmsg.error = false;\n\nmsg.payload.content = 'Pilihan?';\nmsg.payload.options = opts;\nmsg.payload.chatId = 2115515786;\nmsg.payload.type = \"message\";\n\nreturn [msg];",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 380,
+        "y": 360,
+        "wires": [
+            [
+                "4783275a475d0bf6"
+            ]
+        ]
+    },
+    {
+        "id": "b4eb5167b7f990b7",
+        "type": "telegram event",
+        "z": "a3d62bcfe5da9cc8",
+        "name": "",
+        "bot": "003fadf1eb9069c2",
+        "event": "callback_query",
+        "autoanswer": true,
+        "x": 220,
+        "y": 420,
+        "wires": [
+            [
+                "75f0df7c344faa6b"
+            ]
+        ]
+    },
+    {
+        "id": "75f0df7c344faa6b",
+        "type": "function",
+        "z": "a3d62bcfe5da9cc8",
+        "name": "rubah variable callback ke payload",
+        "func": "msg.callback = msg.payload;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 500,
+        "y": 420,
+        "wires": [
+            [
+                "1f9da999ee08520a"
+            ]
+        ]
+    },
+    {
+        "id": "4783275a475d0bf6",
+        "type": "telegram sender",
+        "z": "a3d62bcfe5da9cc8",
+        "name": "kirim data",
+        "bot": "003fadf1eb9069c2",
+        "haserroroutput": false,
+        "outputs": 1,
+        "x": 540,
+        "y": 360,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "18e6563ee0aa9947",
+        "type": "influxdb in",
+        "z": "a3d62bcfe5da9cc8",
+        "influxdb": "4a74512b06580507",
+        "name": "",
+        "query": "",
+        "rawOutput": false,
+        "precision": "",
+        "retentionPolicy": "",
+        "org": "adasdk",
+        "x": 520,
+        "y": 580,
+        "wires": [
+            [
+                "b793ac658c25176e"
+            ]
+        ]
+    },
+    {
+        "id": "1f9da999ee08520a",
+        "type": "function",
+        "z": "a3d62bcfe5da9cc8",
+        "name": "query pengambilan data dari database",
+        "func": "msg.query = `from(bucket: \"datalogger_kelembapan&gas\")\n    |> range(start: -5m)\n    |> filter(fn: (r) => r[\"_measurement\"] == \"gas co\" or r[\"_measurement\"] == \"gas lpg\" or r[\"_measurement\"] == \"kelembapan\" or r[\"_measurement\"] == \"smoke\" or r[\"_measurement\"] == \"suhu(celcius)\" or r[\"_measurement\"] == \"suhu(fahrenheit)\")\n    |> filter(fn: (r) => r[\"_field\"] == \"value\")\n    |> last()`\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 730,
+        "y": 480,
+        "wires": [
+            [
+                "18e6563ee0aa9947"
+            ]
+        ]
+    },
+    {
+        "id": "b793ac658c25176e",
+        "type": "switch",
+        "z": "a3d62bcfe5da9cc8",
+        "name": "pemilihan data yang di panggil",
+        "property": "callback.content",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "1",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "2",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "3",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "4",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "5",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "6",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 6,
+        "x": 850,
+        "y": 680,
+        "wires": [
+            [
+                "6035c2f577f9d444"
+            ],
+            [
+                "5af835e58d0763b4"
+            ],
+            [
+                "42ac06878e3ecfe2"
+            ],
+            [
+                "7c496fe99346a333"
+            ],
+            [
+                "ce5d98f827108885"
+            ],
+            [
+                "75e9dddd9cdea520"
+            ]
+        ]
+    },
+    {
+        "id": "6035c2f577f9d444",
+        "type": "function",
+        "z": "a3d62bcfe5da9cc8",
+        "name": "gas co",
+        "func": "msg.payload.content = 'gas co '+ msg.payload[0]._value + \" ppm\";\nmsg.payload.chatId = 2115515786;\nmsg.payload.type = \"message\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1250,
+        "y": 620,
+        "wires": [
+            [
+                "5e18b65e29178d98"
+            ]
+        ]
+    },
+    {
+        "id": "5af835e58d0763b4",
+        "type": "function",
+        "z": "a3d62bcfe5da9cc8",
+        "name": "gas lpg",
+        "func": "msg.payload.content = 'gas lpg '+ msg.payload[1]._value + \" ppm\";\nmsg.payload.chatId = 2115515786;\nmsg.payload.type = \"message\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1260,
+        "y": 660,
+        "wires": [
+            [
+                "5e18b65e29178d98"
+            ]
+        ]
+    },
+    {
+        "id": "42ac06878e3ecfe2",
+        "type": "function",
+        "z": "a3d62bcfe5da9cc8",
+        "name": "humidity",
+        "func": "msg.payload.content = 'humidity '+ msg.payload[2]._value + \"%\";\nmsg.payload.chatId = 2115515786;\nmsg.payload.type = \"message\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1260,
+        "y": 700,
+        "wires": [
+            [
+                "5e18b65e29178d98"
+            ]
+        ]
+    },
+    {
+        "id": "7c496fe99346a333",
+        "type": "function",
+        "z": "a3d62bcfe5da9cc8",
+        "name": "smoke",
+        "func": "msg.payload.content = 'smoke '+ msg.payload[3]._value + \" ppm\";\nmsg.payload.chatId = 2115515786;\nmsg.payload.type = \"message\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1250,
+        "y": 740,
+        "wires": [
+            [
+                "5e18b65e29178d98"
+            ]
+        ]
+    },
+    {
+        "id": "ce5d98f827108885",
+        "type": "function",
+        "z": "a3d62bcfe5da9cc8",
+        "name": "suhu celcius",
+        "func": "msg.payload.content = 'suhu celcius ' + msg.payload[4]._value + \" °C\";\nmsg.payload.chatId = 2115515786;\nmsg.payload.type = \"message\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1270,
+        "y": 780,
+        "wires": [
+            [
+                "5e18b65e29178d98"
+            ]
+        ]
+    },
+    {
+        "id": "5e18b65e29178d98",
+        "type": "telegram sender",
+        "z": "a3d62bcfe5da9cc8",
+        "name": "",
+        "bot": "003fadf1eb9069c2",
+        "haserroroutput": false,
+        "outputs": 1,
+        "x": 1630,
+        "y": 640,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "6c3ef6b1d3a59388",
+        "type": "telegram command",
+        "z": "a3d62bcfe5da9cc8",
+        "name": "",
+        "command": "/start",
+        "description": "",
+        "registercommand": false,
+        "language": "",
+        "scope": "default",
+        "bot": "003fadf1eb9069c2",
+        "strict": false,
+        "hasresponse": false,
+        "useregex": false,
+        "removeregexcommand": false,
+        "outputs": 1,
+        "x": 90,
+        "y": 500,
+        "wires": [
+            [
+                "9df6b4ff3ef55aa8"
+            ]
+        ]
+    },
+    {
+        "id": "9df6b4ff3ef55aa8",
+        "type": "function",
+        "z": "a3d62bcfe5da9cc8",
+        "name": "start",
+        "func": "msg.payload.content = 'bot monitoring suhu dan gas menggunakan mqtt \\n /data untuk lihat data terakhir dari database \\n /download_csv_file untuk melihat data pengukuran 10 data kebelakang \\n /grafik_pembacaan untuk lihat data pembacaan grafik';\nmsg.payload.chatId = 2115515786;\nmsg.payload.type = \"message\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 230,
+        "y": 500,
+        "wires": [
+            [
+                "b62026fe9b11c22c"
+            ]
+        ]
+    },
+    {
+        "id": "b62026fe9b11c22c",
+        "type": "telegram sender",
+        "z": "a3d62bcfe5da9cc8",
+        "name": "kirim data",
+        "bot": "003fadf1eb9069c2",
+        "haserroroutput": false,
+        "outputs": 1,
+        "x": 420,
+        "y": 480,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "dced9de011cf7c8d",
+        "type": "function",
+        "z": "a3d62bcfe5da9cc8",
+        "name": "send document",
+        "func": "var doc = Buffer.from(msg.payload);\nvar now = new Date();\nvar day = now.getDay();\nvar minute = now.getMinutes();\nvar second = now.getSeconds();\nvar hour = now.getHours();\nvar yyyy = now.getFullYear();\nvar mydays = ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jum&#39;at', 'Sabtu'];\nday = mydays[day];\nvar mymount = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'];\nvar mm = now.getMonth();\nmm = mymount[mm];\nvar parameter;\nif (hour > 12) { parameter = \"P.M\" }\nelse if (hour < 12) { parameter = \"A.M\" }\nvar dd = now.getDate() < 10 ? \"0\" + now.getDate() : now.getDate();\nvar fileOptions = {\n    filename: \"gasCo \" + day + \",\" + dd + \"-\" + mm + \"-\" + yyyy + \" \" + hour + \".\" + minute + \" \" + parameter + \".csv\",\n    contentType: \"text/pdf\"\n}\n\nvar payload = {\n    type: \"document\",\n    chatId: 2115515786,\n    content: doc,\n    fileOptions : fileOptions\n}\n\nmsg.payload = payload;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 2300,
+        "y": 840,
+        "wires": [
+            [
+                "9c5ce48499d7cf10"
+            ]
+        ]
+    },
+    {
+        "id": "9c5ce48499d7cf10",
+        "type": "telegram sender",
+        "z": "a3d62bcfe5da9cc8",
+        "name": "",
+        "bot": "003fadf1eb9069c2",
+        "haserroroutput": false,
+        "outputs": 1,
+        "x": 3030,
+        "y": 1000,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "37c9d9e26ce328f5",
+        "type": "telegram command",
+        "z": "a3d62bcfe5da9cc8",
+        "name": "download file csv",
+        "command": "/download_csv_file",
+        "description": "",
+        "registercommand": false,
+        "language": "",
+        "scope": "default",
+        "bot": "003fadf1eb9069c2",
+        "strict": false,
+        "hasresponse": true,
+        "useregex": false,
+        "removeregexcommand": true,
+        "outputs": 2,
+        "x": 160,
+        "y": 780,
+        "wires": [
+            [
+                "2fc2614e42a4fa6b"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "2fc2614e42a4fa6b",
+        "type": "function",
+        "z": "a3d62bcfe5da9cc8",
+        "name": "pilih data",
+        "func": "var opts = {\n    reply_markup: JSON.stringify({\n        \"inline_keyboard\": [[\n            {\n                \"text\": \"csv co\",\n                \"callback_data\": \"7\"\n            },\n            {\n                \"text\": \"csv lpg\",\n                \"callback_data\": \"8\"\n            },\n            {\n                \"text\": \"csv humidity\",\n                \"callback_data\": \"9\"\n            },\n            {\n                \"text\": \"csv smoke\",\n                \"callback_data\": \"10\"\n            },\n            {\n                \"text\": \"csv suhu celcius\",\n                \"callback_data\": \"11\"\n            },\n            {\n                \"text\": \"csv suhu fahrenheit\",\n                \"callback_data\": \"12\"\n            }]\n        ]\n    })\n};\n\nmsg.error = false;\n\nmsg.payload.content = 'Pilihan?';\nmsg.payload.options = opts;\nmsg.payload.chatId = 2115515786;\nmsg.payload.type = \"message\";\n\nreturn [msg];",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 360,
+        "y": 780,
+        "wires": [
+            [
+                "e4d9f19b495ca574"
+            ]
+        ]
+    },
+    {
+        "id": "e4d9f19b495ca574",
+        "type": "telegram sender",
+        "z": "a3d62bcfe5da9cc8",
+        "name": "",
+        "bot": "003fadf1eb9069c2",
+        "haserroroutput": false,
+        "outputs": 1,
+        "x": 570,
+        "y": 780,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "52df4d985fe11f01",
+        "type": "telegram event",
+        "z": "a3d62bcfe5da9cc8",
+        "name": "",
+        "bot": "003fadf1eb9069c2",
+        "event": "callback_query",
+        "autoanswer": true,
+        "x": 180,
+        "y": 820,
+        "wires": [
+            [
+                "faa6895b683de88e"
+            ]
+        ]
+    },
+    {
+        "id": "faa6895b683de88e",
+        "type": "function",
+        "z": "a3d62bcfe5da9cc8",
+        "name": "rubah variable callback ke payload",
+        "func": "msg.callback = msg.payload;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 480,
+        "y": 820,
+        "wires": [
+            [
+                "726218bf71f5c1ae"
+            ]
+        ]
+    },
+    {
+        "id": "726218bf71f5c1ae",
+        "type": "function",
+        "z": "a3d62bcfe5da9cc8",
+        "name": "query pengambilan data dari database",
+        "func": "msg.query = `from(bucket: \"datalogger_kelembapan&gas\")\n    |> range(start: -5m)\n    |> filter(fn: (r) => r[\"_measurement\"] == \"gas co\" or r[\"_measurement\"] == \"gas lpg\" or r[\"_measurement\"] == \"kelembapan\" or r[\"_measurement\"] == \"smoke\" or r[\"_measurement\"] == \"suhu(celcius)\" or r[\"_measurement\"] == \"suhu(fahrenheit)\")\n    |> filter(fn: (r) => r[\"_field\"] == \"value\")\n    |> limit(n: 10)`\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 210,
+        "y": 880,
+        "wires": [
+            [
+                "744d46332f4a79e6"
+            ]
+        ]
+    },
+    {
+        "id": "0717fa2005588b4b",
+        "type": "switch",
+        "z": "a3d62bcfe5da9cc8",
+        "name": "pemilihan data yang di panggil",
+        "property": "callback.content",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "7",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "8",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "9",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "10",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "11",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "12",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 6,
+        "x": 1010,
+        "y": 880,
+        "wires": [
+            [
+                "a767487fc635eec2"
+            ],
+            [
+                "06ebac49e79b4732"
+            ],
+            [
+                "2abd100422f57482"
+            ],
+            [
+                "64ab8ed7e1155f85"
+            ],
+            [
+                "aa446470d226abfd"
+            ],
+            [
+                "105c71be435ec896"
+            ]
+        ]
+    },
+    {
+        "id": "75e9dddd9cdea520",
+        "type": "function",
+        "z": "a3d62bcfe5da9cc8",
+        "name": "suhu fahrenheit",
+        "func": "msg.payload.content = 'suhu fahrenheit ' + msg.payload[5]._value + ' °F';\nmsg.payload.chatId = 2115515786;\nmsg.payload.type = \"message\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1280,
+        "y": 820,
+        "wires": [
+            [
+                "5e18b65e29178d98"
+            ]
+        ]
+    },
+    {
+        "id": "0a0646a7ec4e14e9",
+        "type": "file in",
+        "z": "a3d62bcfe5da9cc8",
+        "name": "ambil data gas co",
+        "filename": "C:\\Users\\dodik\\Downloads\\data\\datalogger_gas_co.csv",
+        "filenameType": "str",
+        "format": "",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 2050,
+        "y": 840,
+        "wires": [
+            [
+                "dced9de011cf7c8d"
+            ]
+        ]
+    },
+    {
+        "id": "b6381fb2a9ea0720",
+        "type": "file",
+        "z": "a3d62bcfe5da9cc8",
+        "name": "tulis data ke folder",
+        "filename": "C:\\Users\\dodik\\Downloads\\data\\datalogger_gas_co.csv",
+        "filenameType": "str",
+        "appendNewline": true,
+        "createDir": false,
+        "overwriteFile": "true",
+        "encoding": "none",
+        "x": 1830,
+        "y": 840,
+        "wires": [
+            [
+                "0a0646a7ec4e14e9"
+            ]
+        ]
+    },
+    {
+        "id": "06ebac49e79b4732",
+        "type": "function",
+        "z": "a3d62bcfe5da9cc8",
+        "name": "gas lpg",
+        "func": "msg.payload = [msg.payload[10], msg.payload[11], msg.payload[12], msg.payload[13], msg.payload[14], msg.payload[15], msg.payload[16], msg.payload[17], msg.payload[18], msg.payload[19]];\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1360,
+        "y": 900,
+        "wires": [
+            [
+                "b52bb2c33f27b9a2"
+            ]
+        ]
+    },
+    {
+        "id": "7e52bf3f7f2fa984",
+        "type": "file in",
+        "z": "a3d62bcfe5da9cc8",
+        "name": "ambil data gas lpg",
+        "filename": "C:\\Users\\dodik\\Downloads\\data\\datalogger_gas_lpg.csv",
+        "filenameType": "str",
+        "format": "",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 2050,
+        "y": 880,
+        "wires": [
+            [
+                "1b86780f8827aca4"
+            ]
+        ]
+    },
+    {
+        "id": "7ad3e8a14f9f3bb8",
+        "type": "file",
+        "z": "a3d62bcfe5da9cc8",
+        "name": "tulis data ke folder",
+        "filename": "C:\\Users\\dodik\\Downloads\\data\\datalogger_gas_lpg.csv",
+        "filenameType": "str",
+        "appendNewline": true,
+        "createDir": false,
+        "overwriteFile": "true",
+        "encoding": "none",
+        "x": 1830,
+        "y": 880,
+        "wires": [
+            [
+                "7e52bf3f7f2fa984"
+            ]
+        ]
+    },
+    {
+        "id": "1b86780f8827aca4",
+        "type": "function",
+        "z": "a3d62bcfe5da9cc8",
+        "name": "send document",
+        "func": "var doc = Buffer.from(msg.payload);\nvar now = new Date();\nvar day = now.getDay();\nvar minute = now.getMinutes();\nvar second = now.getSeconds();\nvar hour = now.getHours();\nvar yyyy = now.getFullYear();\nvar mydays = ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jum&#39;at', 'Sabtu'];\nday = mydays[day];\nvar mymount = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'];\nvar mm = now.getMonth();\nmm = mymount[mm];\nvar parameter;\nif (hour > 12) { parameter = \"P.M\" }\nelse if (hour < 12) { parameter = \"A.M\" }\nvar dd = now.getDate() < 10 ? \"0\" + now.getDate() : now.getDate();\nvar fileOptions = {\n    filename: \"gasLpg \" + day + \",\" + dd + \"-\" + mm + \"-\" + yyyy + \" \" + hour + \".\" + minute + \" \" + parameter + \".csv\",\n    contentType: \"text/pdf\"\n}\n\nvar payload = {\n    type: \"document\",\n    chatId: 2115515786,\n    content: doc,\n    fileOptions : fileOptions\n}\n\nmsg.payload = payload;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 2300,
+        "y": 880,
+        "wires": [
+            [
+                "9c5ce48499d7cf10"
+            ]
+        ]
+    },
+    {
+        "id": "dbfe0dcee93eb412",
+        "type": "function",
+        "z": "a3d62bcfe5da9cc8",
+        "name": "send document",
+        "func": "var doc = Buffer.from(msg.payload);\nvar now = new Date();\nvar day = now.getDay();\nvar minute = now.getMinutes();\nvar second = now.getSeconds();\nvar hour = now.getHours();\nvar yyyy = now.getFullYear();\nvar mydays = ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jum&#39;at', 'Sabtu'];\nday = mydays[day];\nvar mymount = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'];\nvar mm = now.getMonth();\nmm = mymount[mm];\nvar parameter;\nif (hour > 12) { parameter = \"P.M\" }\nelse if (hour < 12) { parameter = \"A.M\" }\nvar dd = now.getDate() < 10 ? \"0\" + now.getDate() : now.getDate();\nvar fileOptions = {\n    filename: \"Humidity \" + day + \",\" + dd + \"-\" + mm + \"-\" + yyyy + \" \" + hour + \".\" + minute + \" \" + parameter + \".csv\",\n    contentType: \"text/pdf\"\n}\n\nvar payload = {\n    type: \"document\",\n    chatId: 2115515786,\n    content: doc,\n    fileOptions : fileOptions\n}\n\nmsg.payload = payload;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 2300,
+        "y": 920,
+        "wires": [
+            [
+                "9c5ce48499d7cf10"
+            ]
+        ]
+    },
+    {
+        "id": "88e4f100e02073b7",
+        "type": "function",
+        "z": "a3d62bcfe5da9cc8",
+        "name": "send document",
+        "func": "var doc = Buffer.from(msg.payload);\nvar now = new Date();\nvar day = now.getDay();\nvar minute = now.getMinutes();\nvar second = now.getSeconds();\nvar hour = now.getHours();\nvar yyyy = now.getFullYear();\nvar mydays = ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jum&#39;at', 'Sabtu'];\nday = mydays[day];\nvar mymount = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'];\nvar mm = now.getMonth();\nmm = mymount[mm];\nvar parameter;\nif (hour > 12) { parameter = \"P.M\" }\nelse if (hour < 12) { parameter = \"A.M\" }\nvar dd = now.getDate() < 10 ? \"0\" + now.getDate() : now.getDate();\nvar fileOptions = {\n    filename: \"smoke \" + day + \",\" + dd + \"-\" + mm + \"-\" + yyyy + \" \" + hour + \".\" + minute + \" \" + parameter + \".csv\",\n    contentType: \"text/pdf\"\n}\n\nvar payload = {\n    type: \"document\",\n    chatId: 2115515786,\n    content: doc,\n    fileOptions : fileOptions\n}\n\nmsg.payload = payload;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 2300,
+        "y": 960,
+        "wires": [
+            [
+                "9c5ce48499d7cf10"
+            ]
+        ]
+    },
+    {
+        "id": "258d56b637803316",
+        "type": "function",
+        "z": "a3d62bcfe5da9cc8",
+        "name": "send document",
+        "func": "var doc = Buffer.from(msg.payload);\nvar now = new Date();\nvar day = now.getDay();\nvar minute = now.getMinutes();\nvar second = now.getSeconds();\nvar hour = now.getHours();\nvar yyyy = now.getFullYear();\nvar mydays = ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jum&#39;at', 'Sabtu'];\nday = mydays[day];\nvar mymount = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'];\nvar mm = now.getMonth();\nmm = mymount[mm];\nvar parameter;\nif (hour > 12) { parameter = \"P.M\" }\nelse if (hour < 12) { parameter = \"A.M\" }\nvar dd = now.getDate() < 10 ? \"0\" + now.getDate() : now.getDate();\nvar fileOptions = {\n    filename: \"suhuCelcius \" + day + \",\" + dd + \"-\" + mm + \"-\" + yyyy + \" \" + hour + \".\" + minute + \" \" + parameter + \".csv\",\n    contentType: \"text/pdf\"\n}\n\nvar payload = {\n    type: \"document\",\n    chatId: 2115515786,\n    content: doc,\n    fileOptions : fileOptions\n}\n\nmsg.payload = payload;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 2300,
+        "y": 1000,
+        "wires": [
+            [
+                "9c5ce48499d7cf10"
+            ]
+        ]
+    },
+    {
+        "id": "34e58aa8c8c918fb",
+        "type": "function",
+        "z": "a3d62bcfe5da9cc8",
+        "name": "send document",
+        "func": "var doc = Buffer.from(msg.payload);\nvar now = new Date();\nvar day = now.getDay();\nvar minute = now.getMinutes();\nvar second = now.getSeconds();\nvar hour = now.getHours();\nvar yyyy = now.getFullYear();\nvar mydays = ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jum&#39;at', 'Sabtu'];\nday = mydays[day];\nvar mymount = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'];\nvar mm = now.getMonth();\nmm = mymount[mm];\nvar parameter;\nif (hour > 12) { parameter = \"P.M\" }\nelse if (hour < 12) { parameter = \"A.M\" }\nvar dd = now.getDate() < 10 ? \"0\" + now.getDate() : now.getDate();\nvar fileOptions = {\n    filename: \"suhuFahrenheit \" + day + \",\" + dd + \"-\" + mm + \"-\" + yyyy + \" \" + hour + \".\" + minute + \" \" + parameter + \".csv\",\n    contentType: \"text/pdf\"\n}\n\nvar payload = {\n    type: \"document\",\n    chatId: 2115515786,\n    content: doc,\n    fileOptions : fileOptions\n}\n\nmsg.payload = payload;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 2300,
+        "y": 1040,
+        "wires": [
+            [
+                "9c5ce48499d7cf10"
+            ]
+        ]
+    },
+    {
+        "id": "88e447077957b372",
+        "type": "file in",
+        "z": "a3d62bcfe5da9cc8",
+        "name": "ambil data humidity",
+        "filename": "C:\\Users\\dodik\\Downloads\\data\\datalogger_humidity.csv",
+        "filenameType": "str",
+        "format": "",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 2050,
+        "y": 920,
+        "wires": [
+            [
+                "dbfe0dcee93eb412"
+            ]
+        ]
+    },
+    {
+        "id": "b695c248b5121648",
+        "type": "file",
+        "z": "a3d62bcfe5da9cc8",
+        "name": "tulis data ke folder",
+        "filename": "C:\\Users\\dodik\\Downloads\\data\\datalogger_humidity.csv",
+        "filenameType": "str",
+        "appendNewline": true,
+        "createDir": false,
+        "overwriteFile": "true",
+        "encoding": "none",
+        "x": 1830,
+        "y": 920,
+        "wires": [
+            [
+                "88e447077957b372"
+            ]
+        ]
+    },
+    {
+        "id": "3a7c2fabde9ba70a",
+        "type": "file in",
+        "z": "a3d62bcfe5da9cc8",
+        "name": "ambil data smoke",
+        "filename": "C:\\Users\\dodik\\Downloads\\data\\datalogger_smoke.csv",
+        "filenameType": "str",
+        "format": "",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 2050,
+        "y": 960,
+        "wires": [
+            [
+                "88e4f100e02073b7"
+            ]
+        ]
+    },
+    {
+        "id": "c892c7015b0810d1",
+        "type": "file",
+        "z": "a3d62bcfe5da9cc8",
+        "name": "tulis data ke folder",
+        "filename": "C:\\Users\\dodik\\Downloads\\data\\datalogger_smoke.csv",
+        "filenameType": "str",
+        "appendNewline": true,
+        "createDir": false,
+        "overwriteFile": "true",
+        "encoding": "none",
+        "x": 1830,
+        "y": 960,
+        "wires": [
+            [
+                "3a7c2fabde9ba70a"
+            ]
+        ]
+    },
+    {
+        "id": "fe06330f3b3cbca9",
+        "type": "file in",
+        "z": "a3d62bcfe5da9cc8",
+        "name": "ambil data suhu celcius",
+        "filename": "C:\\Users\\dodik\\Downloads\\data\\datalogger_suhu_celcius.csv",
+        "filenameType": "str",
+        "format": "",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 2070,
+        "y": 1000,
+        "wires": [
+            [
+                "258d56b637803316"
+            ]
+        ]
+    },
+    {
+        "id": "c9d916b5706e615d",
+        "type": "file",
+        "z": "a3d62bcfe5da9cc8",
+        "name": "tulis data ke folder",
+        "filename": "C:\\Users\\dodik\\Downloads\\data\\datalogger_suhu_celcius.csv",
+        "filenameType": "str",
+        "appendNewline": true,
+        "createDir": false,
+        "overwriteFile": "true",
+        "encoding": "none",
+        "x": 1830,
+        "y": 1000,
+        "wires": [
+            [
+                "fe06330f3b3cbca9"
+            ]
+        ]
+    },
+    {
+        "id": "bd57bf26e16b61a0",
+        "type": "file in",
+        "z": "a3d62bcfe5da9cc8",
+        "name": "ambil_data_suhu_fahrenheit",
+        "filename": "C:\\Users\\dodik\\Downloads\\data\\datalogger_suhu_fahrenheit.csv",
+        "filenameType": "str",
+        "format": "",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 2080,
+        "y": 1040,
+        "wires": [
+            [
+                "34e58aa8c8c918fb"
+            ]
+        ]
+    },
+    {
+        "id": "82f41f98ca3334a6",
+        "type": "file",
+        "z": "a3d62bcfe5da9cc8",
+        "name": "tulis data ke folder",
+        "filename": "C:\\Users\\dodik\\Downloads\\data\\datalogger_suhu_fahrenheit.csv",
+        "filenameType": "str",
+        "appendNewline": true,
+        "createDir": false,
+        "overwriteFile": "true",
+        "encoding": "none",
+        "x": 1830,
+        "y": 1040,
+        "wires": [
+            [
+                "bd57bf26e16b61a0"
+            ]
+        ]
+    },
+    {
+        "id": "2abd100422f57482",
+        "type": "function",
+        "z": "a3d62bcfe5da9cc8",
+        "name": "humidity",
+        "func": "msg.payload = [msg.payload[20], msg.payload[21], msg.payload[22], msg.payload[23], msg.payload[24], msg.payload[25], msg.payload[26], msg.payload[27], msg.payload[28], msg.payload[29]];\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1360,
+        "y": 940,
+        "wires": [
+            [
+                "1cfbb8e2c3b66b99"
+            ]
+        ]
+    },
+    {
+        "id": "64ab8ed7e1155f85",
+        "type": "function",
+        "z": "a3d62bcfe5da9cc8",
+        "name": "smoke",
+        "func": "msg.payload = [msg.payload[30], msg.payload[31], msg.payload[32], msg.payload[33], msg.payload[34], msg.payload[35], msg.payload[36], msg.payload[37], msg.payload[38], msg.payload[39]];\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1350,
+        "y": 980,
+        "wires": [
+            [
+                "6f79e80c6814d3d8"
+            ]
+        ]
+    },
+    {
+        "id": "aa446470d226abfd",
+        "type": "function",
+        "z": "a3d62bcfe5da9cc8",
+        "name": "suhu celcius",
+        "func": "msg.payload = [msg.payload[40], msg.payload[41], msg.payload[42], msg.payload[43], msg.payload[44], msg.payload[45], msg.payload[46], msg.payload[47], msg.payload[48], msg.payload[49]];\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1370,
+        "y": 1020,
+        "wires": [
+            [
+                "02be8cddb84675fb"
+            ]
+        ]
+    },
+    {
+        "id": "105c71be435ec896",
+        "type": "function",
+        "z": "a3d62bcfe5da9cc8",
+        "name": "temperature",
+        "func": "msg.payload = [msg.payload[50], msg.payload[51], msg.payload[52], msg.payload[53], msg.payload[54], msg.payload[55], msg.payload[56], msg.payload[57], msg.payload[58], msg.payload[59]];\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1370,
+        "y": 1060,
+        "wires": [
+            [
+                "4a8769a5a0764206"
+            ]
+        ]
+    },
+    {
+        "id": "a767487fc635eec2",
+        "type": "function",
+        "z": "a3d62bcfe5da9cc8",
+        "name": "gas co",
+        "func": "msg.payload = [msg.payload[0], msg.payload[1], msg.payload[2], msg.payload[3], msg.payload[4], msg.payload[5], msg.payload[6], msg.payload[7], msg.payload[8], msg.payload[9]];\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1350,
+        "y": 860,
+        "wires": [
+            [
+                "4e84121cb39a386d"
+            ]
+        ]
+    },
+    {
+        "id": "4e84121cb39a386d",
+        "type": "json-2-csv",
+        "z": "a3d62bcfe5da9cc8",
+        "name": "convert json ke csv",
+        "x": 1570,
+        "y": 860,
+        "wires": [
+            [
+                "b6381fb2a9ea0720"
+            ]
+        ]
+    },
+    {
+        "id": "b52bb2c33f27b9a2",
+        "type": "json-2-csv",
+        "z": "a3d62bcfe5da9cc8",
+        "name": "convert json ke csv",
+        "x": 1570,
+        "y": 900,
+        "wires": [
+            [
+                "7ad3e8a14f9f3bb8"
+            ]
+        ]
+    },
+    {
+        "id": "1cfbb8e2c3b66b99",
+        "type": "json-2-csv",
+        "z": "a3d62bcfe5da9cc8",
+        "name": "convert json ke csv",
+        "x": 1570,
+        "y": 940,
+        "wires": [
+            [
+                "b695c248b5121648"
+            ]
+        ]
+    },
+    {
+        "id": "6f79e80c6814d3d8",
+        "type": "json-2-csv",
+        "z": "a3d62bcfe5da9cc8",
+        "name": "convert json ke csv",
+        "x": 1570,
+        "y": 980,
+        "wires": [
+            [
+                "c892c7015b0810d1"
+            ]
+        ]
+    },
+    {
+        "id": "02be8cddb84675fb",
+        "type": "json-2-csv",
+        "z": "a3d62bcfe5da9cc8",
+        "name": "convert json ke csv",
+        "x": 1570,
+        "y": 1020,
+        "wires": [
+            [
+                "c9d916b5706e615d"
+            ]
+        ]
+    },
+    {
+        "id": "4a8769a5a0764206",
+        "type": "json-2-csv",
+        "z": "a3d62bcfe5da9cc8",
+        "name": "convert json ke csv",
+        "x": 1570,
+        "y": 1060,
+        "wires": [
+            [
+                "82f41f98ca3334a6"
+            ]
+        ]
+    },
+    {
+        "id": "3c1cebe9739c5074",
+        "type": "exec",
+        "z": "a3d62bcfe5da9cc8",
+        "command": "Downloads\\Praktik\\njirrr.bat ",
+        "addpay": "payload",
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "winHide": false,
+        "oldrc": false,
+        "name": "eksekusi program dari command prompt",
+        "x": 480,
+        "y": 980,
+        "wires": [
+            [
+                "01126b45e5ce8b06"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "01126b45e5ce8b06",
+        "type": "file in",
+        "z": "a3d62bcfe5da9cc8",
+        "name": "read",
+        "filename": "C:\\Users\\dodik\\Downloads\\Compressed\\grafana-generate-pdf-nodejs-main\\output\\grafana_dash.pdf",
+        "filenameType": "str",
+        "format": "",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 750,
+        "y": 1040,
+        "wires": [
+            [
+                "cc4b4ce9d3cba18d"
+            ]
+        ]
+    },
+    {
+        "id": "cc4b4ce9d3cba18d",
+        "type": "function",
+        "z": "a3d62bcfe5da9cc8",
+        "name": "send document",
+        "func": "var doc = Buffer.from(msg.payload);\nvar now = new Date();\nvar day = now.getDay();\nvar minute = now.getMinutes();\nvar second = now.getSeconds();\nvar hour = now.getHours();\nvar yyyy = now.getFullYear();\nvar mydays = ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jum&#39;at', 'Sabtu'];\nday = mydays[day];\nvar mymount = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'];\nvar mm = now.getMonth();\n    mm = mymount[mm];\nvar parameter;\nif (hour > 12 )\n{parameter = \"P.M\"}\nelse if (hour < 12)\n{parameter = \"A.M\"}\nvar dd = now.getDate() < 10 ? \"0\" + now.getDate() : now.getDate();\nvar fileOptions = {\n    filename: \"grafana \" + day +\",\"+ dd +\"-\"+ mm +\"-\"+ yyyy +\" \"+ hour +\".\"+ minute +\" \"+ parameter+ \".pdf\",\n    contentType : \"text/pdf\"\n}\n\nvar payload = {\n    type: \"document\",\n    chatId: 2115515786,\n    content: doc,\n    fileOptions : fileOptions\n}\n\nmsg.payload = payload;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 920,
+        "y": 1040,
+        "wires": [
+            [
+                "88524dd87ae26227"
+            ]
+        ]
+    },
+    {
+        "id": "88524dd87ae26227",
+        "type": "telegram sender",
+        "z": "a3d62bcfe5da9cc8",
+        "name": "",
+        "bot": "003fadf1eb9069c2",
+        "haserroroutput": false,
+        "outputs": 1,
+        "x": 1130,
+        "y": 1040,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e59b5c5b13cb3014",
+        "type": "telegram command",
+        "z": "a3d62bcfe5da9cc8",
+        "name": "grafik pembacaan",
+        "command": "/grafik_pembacaan",
+        "description": "",
+        "registercommand": false,
+        "language": "",
+        "scope": "default",
+        "bot": "003fadf1eb9069c2",
+        "strict": false,
+        "hasresponse": true,
+        "useregex": false,
+        "removeregexcommand": false,
+        "outputs": 2,
+        "x": 170,
+        "y": 980,
+        "wires": [
+            [
+                "3c1cebe9739c5074"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "6eb0b1bba67d5ec3",
+        "type": "inject",
+        "z": "a3d62bcfe5da9cc8",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "*/1 0-22 * * *",
+        "once": false,
+        "onceDelay": "1500",
+        "topic": "",
+        "payload": "5",
+        "payloadType": "num",
+        "x": 150,
+        "y": 1080,
+        "wires": [
+            [
+                "bd8922924119ce16"
+            ]
+        ]
+    },
+    {
+        "id": "bd8922924119ce16",
+        "type": "while-loop",
+        "z": "a3d62bcfe5da9cc8",
+        "name": "",
+        "condi": "msg.payload > 6",
+        "limit": false,
+        "limitTime": 10000,
+        "time": "wlbd8922924119ce16",
+        "timeType": "msg",
+        "x": 380,
+        "y": 1080,
+        "wires": [
+            [
+                "36c1b8267498658e"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "744d46332f4a79e6",
+        "type": "influxdb in",
+        "z": "a3d62bcfe5da9cc8",
+        "influxdb": "4a74512b06580507",
+        "name": "",
+        "query": "",
+        "rawOutput": false,
+        "precision": "",
+        "retentionPolicy": "",
+        "org": "adasdk",
+        "x": 540,
+        "y": 880,
+        "wires": [
+            [
+                "0717fa2005588b4b"
+            ]
+        ]
+    },
+    {
+        "id": "36c1b8267498658e",
+        "type": "function",
+        "z": "a3d62bcfe5da9cc8",
+        "name": "query pengambilan data dari database",
+        "func": "msg.query = `from(bucket: \"datalogger_kelembapan&gas\")\n    |> range(start: -5m)\n    |> filter(fn: (r) => r[\"_measurement\"] == \"gas co\" or r[\"_measurement\"] == \"gas lpg\" or r[\"_measurement\"] == \"kelembapan\" or r[\"_measurement\"] == \"smoke\" or r[\"_measurement\"] == \"suhu(celcius)\" or r[\"_measurement\"] == \"suhu(fahrenheit)\")\n    |> filter(fn: (r) => r[\"_field\"] == \"value\")`\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 670,
+        "y": 1100,
+        "wires": [
+            [
+                "d7030f7cce1229ea"
+            ]
+        ]
+    },
+    {
+        "id": "d7030f7cce1229ea",
+        "type": "influxdb in",
+        "z": "a3d62bcfe5da9cc8",
+        "influxdb": "4a74512b06580507",
+        "name": "",
+        "query": "",
+        "rawOutput": false,
+        "precision": "",
+        "retentionPolicy": "",
+        "org": "adasdk",
+        "x": 1020,
+        "y": 1100,
+        "wires": [
+            [
+                "a38b6b1b018b8164"
+            ]
+        ]
+    },
+    {
+        "id": "b047388ad5a61149",
+        "type": "function",
+        "z": "a3d62bcfe5da9cc8",
+        "name": "gas lpg",
+        "func": "msg.payload = [msg.payload[300], msg.payload[301], msg.payload[302], msg.payload[303], msg.payload[304], msg.payload[305], msg.payload[306], msg.payload[307], msg.payload[308], msg.payload[309], msg.payload[310], msg.payload[311], msg.payload[312], msg.payload[313], msg.payload[314], msg.payload[315], msg.payload[316], msg.payload[317], msg.payload[318], msg.payload[319], msg.payload[320], msg.payload[321], msg.payload[322], msg.payload[323], msg.payload[324], msg.payload[325], msg.payload[326], msg.payload[327], msg.payload[328], msg.payload[329], msg.payload[330], msg.payload[331], msg.payload[332], msg.payload[333], msg.payload[334], msg.payload[335], msg.payload[336], msg.payload[337], msg.payload[338], msg.payload[339], msg.payload[340], msg.payload[341], msg.payload[342], msg.payload[343], msg.payload[344], msg.payload[345], msg.payload[346], msg.payload[347], msg.payload[348], msg.payload[349], msg.payload[350], msg.payload[351], msg.payload[352], msg.payload[353], msg.payload[354], msg.payload[355], msg.payload[356], msg.payload[357], msg.payload[358], msg.payload[359], msg.payload[360], msg.payload[361], msg.payload[362], msg.payload[363], msg.payload[364], msg.payload[365], msg.payload[366], msg.payload[367], msg.payload[368], msg.payload[369], msg.payload[370], msg.payload[371], msg.payload[372], msg.payload[373], msg.payload[374], msg.payload[375], msg.payload[376], msg.payload[377], msg.payload[378], msg.payload[379], msg.payload[380], msg.payload[381], msg.payload[382], msg.payload[383], msg.payload[384], msg.payload[385], msg.payload[386], msg.payload[387], msg.payload[388], msg.payload[389], msg.payload[390], msg.payload[391], msg.payload[392], msg.payload[393], msg.payload[394], msg.payload[395], msg.payload[396], msg.payload[397], msg.payload[398], msg.payload[399], msg.payload[400], msg.payload[401], msg.payload[402], msg.payload[403], msg.payload[404], msg.payload[405], msg.payload[406], msg.payload[407], msg.payload[408], msg.payload[409], msg.payload[410], msg.payload[411], msg.payload[412], msg.payload[413], msg.payload[414], msg.payload[415], msg.payload[416], msg.payload[417], msg.payload[418], msg.payload[419], msg.payload[420], msg.payload[421], msg.payload[422], msg.payload[423], msg.payload[424], msg.payload[425], msg.payload[426], msg.payload[427], msg.payload[428], msg.payload[429], msg.payload[430], msg.payload[431], msg.payload[432], msg.payload[433], msg.payload[434], msg.payload[435], msg.payload[436], msg.payload[437], msg.payload[438], msg.payload[439], msg.payload[440], msg.payload[441], msg.payload[442], msg.payload[443], msg.payload[444], msg.payload[445], msg.payload[446], msg.payload[447], msg.payload[448], msg.payload[449], msg.payload[450], msg.payload[451], msg.payload[452], msg.payload[453], msg.payload[454], msg.payload[455], msg.payload[456], msg.payload[457], msg.payload[458], msg.payload[459], msg.payload[460], msg.payload[461], msg.payload[462], msg.payload[463], msg.payload[464], msg.payload[465], msg.payload[466], msg.payload[467], msg.payload[468], msg.payload[469], msg.payload[470], msg.payload[471], msg.payload[472], msg.payload[473], msg.payload[474], msg.payload[475], msg.payload[476], msg.payload[477], msg.payload[478], msg.payload[479], msg.payload[480], msg.payload[481], msg.payload[482], msg.payload[483], msg.payload[484], msg.payload[485], msg.payload[486], msg.payload[487], msg.payload[488], msg.payload[489], msg.payload[490], msg.payload[491], msg.payload[492], msg.payload[493], msg.payload[494], msg.payload[495], msg.payload[496], msg.payload[497], msg.payload[498], msg.payload[499], msg.payload[500], msg.payload[501], msg.payload[502], msg.payload[503], msg.payload[504], msg.payload[505], msg.payload[506], msg.payload[507], msg.payload[508], msg.payload[509], msg.payload[510], msg.payload[511], msg.payload[512], msg.payload[513], msg.payload[514], msg.payload[515], msg.payload[516], msg.payload[517], msg.payload[518], msg.payload[519], msg.payload[520], msg.payload[521], msg.payload[522], msg.payload[523], msg.payload[524], msg.payload[525], msg.payload[526], msg.payload[527], msg.payload[528], msg.payload[529], msg.payload[530], msg.payload[531], msg.payload[532], msg.payload[533], msg.payload[534], msg.payload[535], msg.payload[536], msg.payload[537], msg.payload[538], msg.payload[539], msg.payload[540], msg.payload[541], msg.payload[542], msg.payload[543], msg.payload[544], msg.payload[545], msg.payload[546], msg.payload[547], msg.payload[548], msg.payload[549], msg.payload[550], msg.payload[551], msg.payload[552], msg.payload[553], msg.payload[554], msg.payload[555], msg.payload[556], msg.payload[557], msg.payload[558], msg.payload[559], msg.payload[560], msg.payload[561], msg.payload[562], msg.payload[563], msg.payload[564], msg.payload[565], msg.payload[566], msg.payload[567], msg.payload[568], msg.payload[569], msg.payload[570], msg.payload[571], msg.payload[572], msg.payload[573], msg.payload[574], msg.payload[575], msg.payload[576], msg.payload[577], msg.payload[578], msg.payload[579], msg.payload[580], msg.payload[581], msg.payload[582], msg.payload[583], msg.payload[584], msg.payload[585], msg.payload[586], msg.payload[587], msg.payload[588], msg.payload[589], msg.payload[590], msg.payload[591], msg.payload[592], msg.payload[593], msg.payload[594], msg.payload[595], msg.payload[596], msg.payload[597], msg.payload[598], msg.payload[599]];\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1360,
+        "y": 1140,
+        "wires": [
+            [
+                "e0979807fe564fdd"
+            ]
+        ]
+    },
+    {
+        "id": "cedaa80104496aba",
+        "type": "function",
+        "z": "a3d62bcfe5da9cc8",
+        "name": "humidity",
+        "func": "msg.payload = [msg.payload[20], msg.payload[21], msg.payload[22], msg.payload[23], msg.payload[24], msg.payload[25], msg.payload[26], msg.payload[27], msg.payload[28], msg.payload[29]];\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1360,
+        "y": 1180,
+        "wires": [
+            [
+                "6fbd3018ae0a6bb3"
+            ]
+        ]
+    },
+    {
+        "id": "865c5901f3c2cfcc",
+        "type": "function",
+        "z": "a3d62bcfe5da9cc8",
+        "name": "smoke",
+        "func": "msg.payload = [msg.payload[30], msg.payload[31], msg.payload[32], msg.payload[33], msg.payload[34], msg.payload[35], msg.payload[36], msg.payload[37], msg.payload[38], msg.payload[39]];\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1350,
+        "y": 1220,
+        "wires": [
+            [
+                "45121160b57bcece"
+            ]
+        ]
+    },
+    {
+        "id": "85eabb375a45f2cd",
+        "type": "function",
+        "z": "a3d62bcfe5da9cc8",
+        "name": "suhu celcius",
+        "func": "msg.payload = [msg.payload[40], msg.payload[41], msg.payload[42], msg.payload[43], msg.payload[44], msg.payload[45], msg.payload[46], msg.payload[47], msg.payload[48], msg.payload[49]];\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1370,
+        "y": 1260,
+        "wires": [
+            [
+                "5bb2bb24f6a59734"
+            ]
+        ]
+    },
+    {
+        "id": "27731fecde781232",
+        "type": "function",
+        "z": "a3d62bcfe5da9cc8",
+        "name": "temperature",
+        "func": "msg.payload = [msg.payload[50], msg.payload[51], msg.payload[52], msg.payload[53], msg.payload[54], msg.payload[55], msg.payload[56], msg.payload[57], msg.payload[58], msg.payload[59]];\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1370,
+        "y": 1300,
+        "wires": [
+            [
+                "b492efd28f4bb47d"
+            ]
+        ]
+    },
+    {
+        "id": "f6c6cea69e10ed79",
+        "type": "function",
+        "z": "a3d62bcfe5da9cc8",
+        "name": "gas co",
+        "func": "msg.payload = [msg.payload[0],msg.payload[1], msg.payload[2], msg.payload[3], msg.payload[4], msg.payload[5], msg.payload[6], msg.payload[7], msg.payload[8], msg.payload[9], msg.payload[10], msg.payload[11], msg.payload[12], msg.payload[13], msg.payload[14], msg.payload[15], msg.payload[16], msg.payload[17], msg.payload[18], msg.payload[19], msg.payload[20], msg.payload[21], msg.payload[22], msg.payload[23], msg.payload[24], msg.payload[25], msg.payload[26], msg.payload[27], msg.payload[28], msg.payload[29], msg.payload[30], msg.payload[31], msg.payload[32], msg.payload[33], msg.payload[34], msg.payload[35], msg.payload[36], msg.payload[37], msg.payload[38], msg.payload[39], msg.payload[40], msg.payload[41], msg.payload[42], msg.payload[43], msg.payload[44], msg.payload[45], msg.payload[46], msg.payload[47], msg.payload[48], msg.payload[49], msg.payload[50], msg.payload[51], msg.payload[52], msg.payload[53], msg.payload[54], msg.payload[55], msg.payload[56], msg.payload[57], msg.payload[58], msg.payload[59], msg.payload[60], msg.payload[61], msg.payload[62], msg.payload[63], msg.payload[64], msg.payload[65], msg.payload[66], msg.payload[67], msg.payload[68], msg.payload[69], msg.payload[70], msg.payload[71], msg.payload[72], msg.payload[73], msg.payload[74], msg.payload[75], msg.payload[76], msg.payload[77], msg.payload[78], msg.payload[79], msg.payload[80], msg.payload[81], msg.payload[82], msg.payload[83], msg.payload[84], msg.payload[85], msg.payload[86], msg.payload[87], msg.payload[88], msg.payload[89], msg.payload[90], msg.payload[91], msg.payload[92], msg.payload[93], msg.payload[94], msg.payload[95], msg.payload[96], msg.payload[97], msg.payload[98], msg.payload[99], msg.payload[100], msg.payload[101], msg.payload[102], msg.payload[103], msg.payload[104], msg.payload[105], msg.payload[106], msg.payload[107], msg.payload[108], msg.payload[109], msg.payload[110], msg.payload[111], msg.payload[112], msg.payload[113], msg.payload[114], msg.payload[115], msg.payload[116], msg.payload[117], msg.payload[118], msg.payload[119], msg.payload[120], msg.payload[121], msg.payload[122], msg.payload[123], msg.payload[124], msg.payload[125], msg.payload[126], msg.payload[127], msg.payload[128], msg.payload[129], msg.payload[130], msg.payload[131], msg.payload[132], msg.payload[133], msg.payload[134], msg.payload[135], msg.payload[136], msg.payload[137], msg.payload[138], msg.payload[139], msg.payload[140], msg.payload[141], msg.payload[142], msg.payload[143], msg.payload[144], msg.payload[145], msg.payload[146], msg.payload[147], msg.payload[148], msg.payload[149], msg.payload[150], msg.payload[151], msg.payload[152], msg.payload[153], msg.payload[154], msg.payload[155], msg.payload[156], msg.payload[157], msg.payload[158], msg.payload[159], msg.payload[160], msg.payload[161], msg.payload[162], msg.payload[163], msg.payload[164], msg.payload[165], msg.payload[166], msg.payload[167], msg.payload[168], msg.payload[169], msg.payload[170], msg.payload[171], msg.payload[172], msg.payload[173], msg.payload[174], msg.payload[175], msg.payload[176], msg.payload[177], msg.payload[178], msg.payload[179], msg.payload[180], msg.payload[181], msg.payload[182], msg.payload[183], msg.payload[184], msg.payload[185], msg.payload[186], msg.payload[187], msg.payload[188], msg.payload[189], msg.payload[190], msg.payload[191], msg.payload[192], msg.payload[193], msg.payload[194], msg.payload[195], msg.payload[196], msg.payload[197], msg.payload[198], msg.payload[199], msg.payload[200], msg.payload[201], msg.payload[202], msg.payload[203], msg.payload[204], msg.payload[205], msg.payload[206], msg.payload[207], msg.payload[208], msg.payload[209], msg.payload[210], msg.payload[211], msg.payload[212], msg.payload[213], msg.payload[214], msg.payload[215], msg.payload[216], msg.payload[217], msg.payload[218], msg.payload[219], msg.payload[220], msg.payload[221], msg.payload[222], msg.payload[223], msg.payload[224], msg.payload[225], msg.payload[226], msg.payload[227], msg.payload[228], msg.payload[229], msg.payload[230], msg.payload[231], msg.payload[232], msg.payload[233], msg.payload[234], msg.payload[235], msg.payload[236], msg.payload[237], msg.payload[238], msg.payload[239], msg.payload[240], msg.payload[241], msg.payload[242], msg.payload[243], msg.payload[244], msg.payload[245], msg.payload[246], msg.payload[247], msg.payload[248], msg.payload[249], msg.payload[250], msg.payload[251], msg.payload[252], msg.payload[253], msg.payload[254], msg.payload[255], msg.payload[256], msg.payload[257], msg.payload[258], msg.payload[259], msg.payload[260], msg.payload[261], msg.payload[262], msg.payload[263], msg.payload[264], msg.payload[265], msg.payload[266], msg.payload[267], msg.payload[268], msg.payload[269], msg.payload[270], msg.payload[271], msg.payload[272], msg.payload[273], msg.payload[274], msg.payload[275], msg.payload[276], msg.payload[277], msg.payload[278], msg.payload[279], msg.payload[280], msg.payload[281], msg.payload[282], msg.payload[283], msg.payload[284], msg.payload[285], msg.payload[286], msg.payload[287], msg.payload[288], msg.payload[289], msg.payload[290], msg.payload[291], msg.payload[292], msg.payload[293], msg.payload[294], msg.payload[295], msg.payload[296], msg.payload[297], msg.payload[298], msg.payload[299]];\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1350,
+        "y": 1100,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "d2434a29ebfe51c9",
+        "type": "file",
+        "z": "a3d62bcfe5da9cc8",
+        "name": "tulis data ke folder",
+        "filename": "C:\\Users\\dodik\\Downloads\\data\\datalogger_gas_co.csv",
+        "filenameType": "str",
+        "appendNewline": true,
+        "createDir": false,
+        "overwriteFile": "true",
+        "encoding": "none",
+        "x": 1850,
+        "y": 1080,
+        "wires": [
+            [
+                "8303f562605433bb"
+            ]
+        ]
+    },
+    {
+        "id": "c219482c203b199f",
+        "type": "file",
+        "z": "a3d62bcfe5da9cc8",
+        "name": "tulis data ke folder",
+        "filename": "C:\\Users\\dodik\\Downloads\\data\\datalogger_gas_lpg.csv",
+        "filenameType": "str",
+        "appendNewline": true,
+        "createDir": false,
+        "overwriteFile": "true",
+        "encoding": "none",
+        "x": 1850,
+        "y": 1120,
+        "wires": [
+            [
+                "b4e9b06f9dc263f3"
+            ]
+        ]
+    },
+    {
+        "id": "3b528c886492e2ed",
+        "type": "file",
+        "z": "a3d62bcfe5da9cc8",
+        "name": "tulis data ke folder",
+        "filename": "C:\\Users\\dodik\\Downloads\\data\\datalogger_humidity.csv",
+        "filenameType": "str",
+        "appendNewline": true,
+        "createDir": false,
+        "overwriteFile": "true",
+        "encoding": "none",
+        "x": 1850,
+        "y": 1160,
+        "wires": [
+            [
+                "4c7fdd74deb5449d"
+            ]
+        ]
+    },
+    {
+        "id": "7a6ba530948c999c",
+        "type": "file",
+        "z": "a3d62bcfe5da9cc8",
+        "name": "tulis data ke folder",
+        "filename": "C:\\Users\\dodik\\Downloads\\data\\datalogger_smoke.csv",
+        "filenameType": "str",
+        "appendNewline": true,
+        "createDir": false,
+        "overwriteFile": "true",
+        "encoding": "none",
+        "x": 1850,
+        "y": 1200,
+        "wires": [
+            [
+                "02dbe8aa9e115961"
+            ]
+        ]
+    },
+    {
+        "id": "12935c84adc2225c",
+        "type": "file",
+        "z": "a3d62bcfe5da9cc8",
+        "name": "tulis data ke folder",
+        "filename": "C:\\Users\\dodik\\Downloads\\data\\datalogger_suhu_celcius.csv",
+        "filenameType": "str",
+        "appendNewline": true,
+        "createDir": false,
+        "overwriteFile": "true",
+        "encoding": "none",
+        "x": 1850,
+        "y": 1240,
+        "wires": [
+            [
+                "44816956e1943eed"
+            ]
+        ]
+    },
+    {
+        "id": "e86a351f09fd7fe7",
+        "type": "file",
+        "z": "a3d62bcfe5da9cc8",
+        "name": "tulis data ke folder",
+        "filename": "C:\\Users\\dodik\\Downloads\\data\\datalogger_suhu_fahrenheit.csv",
+        "filenameType": "str",
+        "appendNewline": true,
+        "createDir": false,
+        "overwriteFile": "true",
+        "encoding": "none",
+        "x": 1850,
+        "y": 1280,
+        "wires": [
+            [
+                "02021064bbd44670"
+            ]
+        ]
+    },
+    {
+        "id": "bc2133bfa0d15c2a",
+        "type": "json-2-csv",
+        "z": "a3d62bcfe5da9cc8",
+        "name": "convert json ke csv",
+        "x": 1570,
+        "y": 1100,
+        "wires": [
+            [
+                "d2434a29ebfe51c9"
+            ]
+        ]
+    },
+    {
+        "id": "e0979807fe564fdd",
+        "type": "json-2-csv",
+        "z": "a3d62bcfe5da9cc8",
+        "name": "convert json ke csv",
+        "x": 1570,
+        "y": 1140,
+        "wires": [
+            [
+                "c219482c203b199f"
+            ]
+        ]
+    },
+    {
+        "id": "6fbd3018ae0a6bb3",
+        "type": "json-2-csv",
+        "z": "a3d62bcfe5da9cc8",
+        "name": "convert json ke csv",
+        "x": 1570,
+        "y": 1180,
+        "wires": [
+            [
+                "3b528c886492e2ed"
+            ]
+        ]
+    },
+    {
+        "id": "45121160b57bcece",
+        "type": "json-2-csv",
+        "z": "a3d62bcfe5da9cc8",
+        "name": "convert json ke csv",
+        "x": 1570,
+        "y": 1220,
+        "wires": [
+            [
+                "7a6ba530948c999c"
+            ]
+        ]
+    },
+    {
+        "id": "5bb2bb24f6a59734",
+        "type": "json-2-csv",
+        "z": "a3d62bcfe5da9cc8",
+        "name": "convert json ke csv",
+        "x": 1570,
+        "y": 1260,
+        "wires": [
+            [
+                "12935c84adc2225c"
+            ]
+        ]
+    },
+    {
+        "id": "b492efd28f4bb47d",
+        "type": "json-2-csv",
+        "z": "a3d62bcfe5da9cc8",
+        "name": "convert json ke csv",
+        "x": 1570,
+        "y": 1300,
+        "wires": [
+            [
+                "e86a351f09fd7fe7"
+            ]
+        ]
+    },
+    {
+        "id": "644b0ac0a2c33086",
+        "type": "function",
+        "z": "a3d62bcfe5da9cc8",
+        "name": "send document",
+        "func": "var doc = Buffer.from(msg.payload);\nvar now = new Date();\nvar day = now.getDay();\nvar minute = now.getMinutes();\nvar second = now.getSeconds();\nvar hour = now.getHours();\nvar yyyy = now.getFullYear();\nvar mydays = ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jum&#39;at', 'Sabtu'];\nday = mydays[day];\nvar mymount = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'];\nvar mm = now.getMonth();\nmm = mymount[mm];\nvar parameter;\nif (hour > 12) { parameter = \"P.M\" }\nelse if (hour < 12) { parameter = \"A.M\" }\nvar dd = now.getDate() < 10 ? \"0\" + now.getDate() : now.getDate();\nvar fileOptions = {\n    filename: \"gasCo \" + day + \",\" + dd + \"-\" + mm + \"-\" + yyyy + \" \" + hour + \".\" + minute + \" \" + parameter + \".csv\",\n    contentType: \"text/pdf\"\n}\n\nvar payload = {\n    type: \"document\",\n    chatId: 2115515786,\n    content: doc,\n    fileOptions : fileOptions\n}\n\nmsg.payload = payload;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 2300,
+        "y": 1080,
+        "wires": [
+            [
+                "9c5ce48499d7cf10"
+            ]
+        ]
+    },
+    {
+        "id": "8303f562605433bb",
+        "type": "file in",
+        "z": "a3d62bcfe5da9cc8",
+        "name": "ambil data gas co",
+        "filename": "C:\\Users\\dodik\\Downloads\\data\\datalogger_gas_co.csv",
+        "filenameType": "str",
+        "format": "",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 2050,
+        "y": 1080,
+        "wires": [
+            [
+                "644b0ac0a2c33086"
+            ]
+        ]
+    },
+    {
+        "id": "b4e9b06f9dc263f3",
+        "type": "file in",
+        "z": "a3d62bcfe5da9cc8",
+        "name": "ambil data gas lpg",
+        "filename": "C:\\Users\\dodik\\Downloads\\data\\datalogger_gas_lpg.csv",
+        "filenameType": "str",
+        "format": "",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 2050,
+        "y": 1120,
+        "wires": [
+            [
+                "8005f22706ac2e0f"
+            ]
+        ]
+    },
+    {
+        "id": "8005f22706ac2e0f",
+        "type": "function",
+        "z": "a3d62bcfe5da9cc8",
+        "name": "send document",
+        "func": "var doc = Buffer.from(msg.payload);\nvar now = new Date();\nvar day = now.getDay();\nvar minute = now.getMinutes();\nvar second = now.getSeconds();\nvar hour = now.getHours();\nvar yyyy = now.getFullYear();\nvar mydays = ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jum&#39;at', 'Sabtu'];\nday = mydays[day];\nvar mymount = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'];\nvar mm = now.getMonth();\nmm = mymount[mm];\nvar parameter;\nif (hour > 12) { parameter = \"P.M\" }\nelse if (hour < 12) { parameter = \"A.M\" }\nvar dd = now.getDate() < 10 ? \"0\" + now.getDate() : now.getDate();\nvar fileOptions = {\n    filename: \"gasLpg \" + day + \",\" + dd + \"-\" + mm + \"-\" + yyyy + \" \" + hour + \".\" + minute + \" \" + parameter + \".csv\",\n    contentType: \"text/pdf\"\n}\n\nvar payload = {\n    type: \"document\",\n    chatId: 2115515786,\n    content: doc,\n    fileOptions : fileOptions\n}\n\nmsg.payload = payload;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 2300,
+        "y": 1120,
+        "wires": [
+            [
+                "9c5ce48499d7cf10"
+            ]
+        ]
+    },
+    {
+        "id": "81464b22b905192e",
+        "type": "function",
+        "z": "a3d62bcfe5da9cc8",
+        "name": "send document",
+        "func": "var doc = Buffer.from(msg.payload);\nvar now = new Date();\nvar day = now.getDay();\nvar minute = now.getMinutes();\nvar second = now.getSeconds();\nvar hour = now.getHours();\nvar yyyy = now.getFullYear();\nvar mydays = ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jum&#39;at', 'Sabtu'];\nday = mydays[day];\nvar mymount = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'];\nvar mm = now.getMonth();\nmm = mymount[mm];\nvar parameter;\nif (hour > 12) { parameter = \"P.M\" }\nelse if (hour < 12) { parameter = \"A.M\" }\nvar dd = now.getDate() < 10 ? \"0\" + now.getDate() : now.getDate();\nvar fileOptions = {\n    filename: \"Humidity \" + day + \",\" + dd + \"-\" + mm + \"-\" + yyyy + \" \" + hour + \".\" + minute + \" \" + parameter + \".csv\",\n    contentType: \"text/pdf\"\n}\n\nvar payload = {\n    type: \"document\",\n    chatId: 2115515786,\n    content: doc,\n    fileOptions : fileOptions\n}\n\nmsg.payload = payload;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 2300,
+        "y": 1160,
+        "wires": [
+            [
+                "9c5ce48499d7cf10"
+            ]
+        ]
+    },
+    {
+        "id": "a08836367022bfca",
+        "type": "function",
+        "z": "a3d62bcfe5da9cc8",
+        "name": "send document",
+        "func": "var doc = Buffer.from(msg.payload);\nvar now = new Date();\nvar day = now.getDay();\nvar minute = now.getMinutes();\nvar second = now.getSeconds();\nvar hour = now.getHours();\nvar yyyy = now.getFullYear();\nvar mydays = ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jum&#39;at', 'Sabtu'];\nday = mydays[day];\nvar mymount = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'];\nvar mm = now.getMonth();\nmm = mymount[mm];\nvar parameter;\nif (hour > 12) { parameter = \"P.M\" }\nelse if (hour < 12) { parameter = \"A.M\" }\nvar dd = now.getDate() < 10 ? \"0\" + now.getDate() : now.getDate();\nvar fileOptions = {\n    filename: \"smoke \" + day + \",\" + dd + \"-\" + mm + \"-\" + yyyy + \" \" + hour + \".\" + minute + \" \" + parameter + \".csv\",\n    contentType: \"text/pdf\"\n}\n\nvar payload = {\n    type: \"document\",\n    chatId: 2115515786,\n    content: doc,\n    fileOptions : fileOptions\n}\n\nmsg.payload = payload;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 2300,
+        "y": 1200,
+        "wires": [
+            [
+                "9c5ce48499d7cf10"
+            ]
+        ]
+    },
+    {
+        "id": "ce6c931f958e42d8",
+        "type": "function",
+        "z": "a3d62bcfe5da9cc8",
+        "name": "send document",
+        "func": "var doc = Buffer.from(msg.payload);\nvar now = new Date();\nvar day = now.getDay();\nvar minute = now.getMinutes();\nvar second = now.getSeconds();\nvar hour = now.getHours();\nvar yyyy = now.getFullYear();\nvar mydays = ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jum&#39;at', 'Sabtu'];\nday = mydays[day];\nvar mymount = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'];\nvar mm = now.getMonth();\nmm = mymount[mm];\nvar parameter;\nif (hour > 12) { parameter = \"P.M\" }\nelse if (hour < 12) { parameter = \"A.M\" }\nvar dd = now.getDate() < 10 ? \"0\" + now.getDate() : now.getDate();\nvar fileOptions = {\n    filename: \"suhuCelcius \" + day + \",\" + dd + \"-\" + mm + \"-\" + yyyy + \" \" + hour + \".\" + minute + \" \" + parameter + \".csv\",\n    contentType: \"text/pdf\"\n}\n\nvar payload = {\n    type: \"document\",\n    chatId: 2115515786,\n    content: doc,\n    fileOptions : fileOptions\n}\n\nmsg.payload = payload;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 2300,
+        "y": 1240,
+        "wires": [
+            [
+                "9c5ce48499d7cf10"
+            ]
+        ]
+    },
+    {
+        "id": "563cfcfbd3a21405",
+        "type": "function",
+        "z": "a3d62bcfe5da9cc8",
+        "name": "send document",
+        "func": "var doc = Buffer.from(msg.payload);\nvar now = new Date();\nvar day = now.getDay();\nvar minute = now.getMinutes();\nvar second = now.getSeconds();\nvar hour = now.getHours();\nvar yyyy = now.getFullYear();\nvar mydays = ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jum&#39;at', 'Sabtu'];\nday = mydays[day];\nvar mymount = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'];\nvar mm = now.getMonth();\nmm = mymount[mm];\nvar parameter;\nif (hour > 12) { parameter = \"P.M\" }\nelse if (hour < 12) { parameter = \"A.M\" }\nvar dd = now.getDate() < 10 ? \"0\" + now.getDate() : now.getDate();\nvar fileOptions = {\n    filename: \"suhuFahrenheit \" + day + \",\" + dd + \"-\" + mm + \"-\" + yyyy + \" \" + hour + \".\" + minute + \" \" + parameter + \".csv\",\n    contentType: \"text/pdf\"\n}\n\nvar payload = {\n    type: \"document\",\n    chatId: 2115515786,\n    content: doc,\n    fileOptions : fileOptions\n}\n\nmsg.payload = payload;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 2300,
+        "y": 1280,
+        "wires": [
+            [
+                "9c5ce48499d7cf10"
+            ]
+        ]
+    },
+    {
+        "id": "4c7fdd74deb5449d",
+        "type": "file in",
+        "z": "a3d62bcfe5da9cc8",
+        "name": "ambil data humidity",
+        "filename": "C:\\Users\\dodik\\Downloads\\data\\datalogger_humidity.csv",
+        "filenameType": "str",
+        "format": "",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 2050,
+        "y": 1160,
+        "wires": [
+            [
+                "81464b22b905192e"
+            ]
+        ]
+    },
+    {
+        "id": "02dbe8aa9e115961",
+        "type": "file in",
+        "z": "a3d62bcfe5da9cc8",
+        "name": "ambil data smoke",
+        "filename": "C:\\Users\\dodik\\Downloads\\data\\datalogger_smoke.csv",
+        "filenameType": "str",
+        "format": "",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 2050,
+        "y": 1200,
+        "wires": [
+            [
+                "a08836367022bfca"
+            ]
+        ]
+    },
+    {
+        "id": "44816956e1943eed",
+        "type": "file in",
+        "z": "a3d62bcfe5da9cc8",
+        "name": "ambil data suhu celcius",
+        "filename": "C:\\Users\\dodik\\Downloads\\data\\datalogger_suhu_celcius.csv",
+        "filenameType": "str",
+        "format": "",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 2070,
+        "y": 1240,
+        "wires": [
+            [
+                "ce6c931f958e42d8"
+            ]
+        ]
+    },
+    {
+        "id": "02021064bbd44670",
+        "type": "file in",
+        "z": "a3d62bcfe5da9cc8",
+        "name": "ambil_data_suhu_fahrenheit",
+        "filename": "C:\\Users\\dodik\\Downloads\\data\\datalogger_suhu_fahrenheit.csv",
+        "filenameType": "str",
+        "format": "",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 2080,
+        "y": 1280,
+        "wires": [
+            [
+                "563cfcfbd3a21405"
+            ]
+        ]
+    },
+    {
+        "id": "3428f893d06f1671",
+        "type": "debug",
+        "z": "a3d62bcfe5da9cc8",
+        "name": "debug 7",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1080,
+        "y": 1300,
+        "wires": []
+    },
+    {
+        "id": "dee1127952344a06",
+        "type": "debug",
+        "z": "a3d62bcfe5da9cc8",
+        "name": "debug 8",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1200,
+        "y": 1260,
+        "wires": []
+    },
+    {
+        "id": "b0ffd685a8dbba7a",
+        "type": "switch",
+        "z": "a3d62bcfe5da9cc8",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 270,
+        "y": 1180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "70cdadbf47821419",
+        "type": "function",
+        "z": "a3d62bcfe5da9cc8",
+        "name": "function 7",
+        "func": "\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 800,
+        "y": 1200,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a38b6b1b018b8164",
+        "type": "rbe",
+        "z": "a3d62bcfe5da9cc8",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "payload:array",
+        "x": 1070,
+        "y": 1200,
+        "wires": [
+            [
+                "3428f893d06f1671"
+            ]
+        ]
+    },
+    {
+        "id": "96777da94f9a576c",
+        "type": "mqtt-broker",
+        "name": "mqtt njir",
+        "broker": "830f9d7f1fe74e01af34f37486f23891.s1.eu.hivemq.cloud",
+        "port": "8883",
+        "tls": "",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": true,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "4a74512b06580507",
+        "type": "influxdb",
+        "hostname": "127.0.0.1",
+        "port": "8086",
+        "protocol": "http",
+        "database": "datalogger_kelembapan&gas",
+        "name": "datalogger_kelembapan&gas",
+        "usetls": false,
+        "tls": "",
+        "influxdbVersion": "2.0",
+        "url": "http://localhost:8086",
+        "rejectUnauthorized": true
+    },
+    {
+        "id": "003fadf1eb9069c2",
+        "type": "telegram bot",
+        "botname": "monitoring_mqtt_bot",
+        "usernames": "",
+        "chatids": "",
+        "baseapiurl": "",
+        "updatemode": "polling",
+        "pollinterval": "300",
+        "usesocks": false,
+        "sockshost": "",
+        "socksprotocol": "socks5",
+        "socksport": "6667",
+        "socksusername": "anonymous",
+        "sockspassword": "",
+        "bothost": "",
+        "botpath": "",
+        "localbotport": "8443",
+        "publicbotport": "8443",
+        "privatekey": "",
+        "certificate": "",
+        "useselfsignedcertificate": false,
+        "sslterminated": false,
+        "verboselogging": false
+    }
+]
